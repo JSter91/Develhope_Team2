@@ -1,23 +1,14 @@
-# Team Projects Showcase 🛠️
+# Nebula: Space Travel Website
 
-Welcome to the showcase of team projects completed during my course at DevelHope. Here are three projects that highlight our collaborative efforts and skills development:
+Welcome to the Nebula: Space Travel Website project! This project is a collaborative effort by our team at DevelHope to create an immersive website dedicated to space travel experiences using React.js and Node.js.
 
-## 1. Netflix Replica
+## Project Overview
 
-Our team worked on replicating the popular streaming platform Netflix using only HTML and CSS. Despite the simplicity of the tools, we aimed to capture the essence of the Netflix interface, focusing on layout, styling, and responsiveness.
+Nebula is a fictional website that offers information about space destinations, booking options, and interactive features for users interested in space exploration. Our team leveraged React.js for the frontend and Node.js for the backend to develop this platform.
 
-- Project Path: `netflix-replica`
+## Technologies Used
 
-## 2. Electronic Arts Website Replica
+- React.js
+- Node.js
 
-In this project, our team recreated the website of Electronic Arts (EA) using HTML, CSS, and JavaScript. We paid close attention to detail, striving to emulate the design and functionality of the original site. Interactive features were implemented to enhance the user experience.
-
-- Project Path: `ea-website-replica`
-
-## 3. Nebula: Space Travel Website
-
-For our final project, we conceptualized and developed Nebula, a fictional website dedicated to space travel experiences. Leveraging React.js and Node.js, we created an immersive platform that offers information about space destinations, booking options, and interactive features for users interested in space exploration.
-
-- Project Path: `nebula-space-travel-website`
-
-Feel free to explore each project and provide feedback. Thank you for checking out our work!
+Feel free to explore the code and provide feedback. Thank you for checking out our work!
