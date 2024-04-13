@@ -1,0 +1,27 @@
+@import url('https://fonts.cdnfonts.com/css/michroma');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Michroma", sans-serif;
+
+
+
+}
+html{
+  display: flex;
+}
+
+body {
+  background-color: rgb(0, 0, 0);
+  margin: 0 auto;
+  position: relative;
+  width: 100vw;
+  max-width: 1920px;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+

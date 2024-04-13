@@ -1,0 +1,82 @@
+.react-datepicker-wrapper {
+  width: 100%;
+  margin-top: 20px;
+  position: relative;
+}
+
+.react-datepicker-wrapper input {
+  outline: none;
+  position: relative !important;
+  flex-wrap: wrap;
+  width: 100%;
+  height: 40px;
+  box-shadow: 0 2px 10px black;
+  border: none;
+  border-radius: 8px;
+  padding-left: 20px;
+  font-size: 16px;
+
+}
+
+@media (max-width: 1100px) {
+  .react-datepicker-wrapper input {
+    top: 20px;
+  }
+}
+
+.react-datepicker {
+  font-family: Arial, sans-serif;
+  position: absolute;
+  border-radius: 5px;
+  border: none !important;
+  box-shadow: 0 2px 10px black;
+  background-color: #fff;
+
+  
+}
+
+.react-datepicker-popper{
+  z-index: 9 !important;
+  margin-bottom: -50px;
+
+}
+
+.react-datepicker__header {
+  background-color: #007bff; /* Esempio: colore di sfondo dell'header */
+}
+
+.react-datepicker__current-month {
+  color: #fff; /* Esempio: colore del testo per il mese corrente */
+}
+
+.react-datepicker__day-names {
+  color: #007bff; /* Esempio: colore del testo per i nomi dei giorni della settimana */
+}
+
+.react-datepicker__day--selected {
+  background-color: #007bff; /* Esempio: colore di sfondo per il giorno selezionato */
+  color: #fff; /* Esempio: colore del testo per il giorno selezionato */
+}
+
+.react-datepicker__day--keyboard-selected {
+  background-color: #007bff; /* Esempio: colore di sfondo per il giorno selezionato tramite tastiera */
+  color: #fff; /* Esempio: colore del testo per il giorno selezionato tramite tastiera */
+}
+
+.p-selector {
+  height: 30px;
+  margin-top: 30px;
+  font-size: 18px;
+}
+
+.p-selector p {
+  color: white;
+  text-shadow: 1px 1px 1px black;
+  height: 100%;
+}
+
+@media (max-width: 500px) {
+  .p-selector p {
+    font-size: 16px;
+  }
+}

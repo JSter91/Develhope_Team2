@@ -1,0 +1,116 @@
+.profile {
+  z-index: 11;
+  position: fixed;
+  width: 0;
+  height: 0;
+  background-color: rgb(0, 0, 0);
+  border-radius: 16px;
+  left: 50%;
+  top: 50vh;
+  transform: translate(-50%, -50%);
+  overflow: hidden;
+  transition: height 0.5s ease-out, width 0.5s ease-out;
+
+  
+}
+
+.profile-container {
+  width: 100%;
+  height: 100%;
+  transition: opacity 0.4s ease-out;
+
+}
+.hidden {
+  opacity: 0;
+}
+
+.profile.expanded_profile {
+  width: 2px;
+  border: 1px solid rgb(56, 56, 56);
+
+  display: block;
+  height: 60vh;
+  max-height: 650px;
+}
+
+.expanded_profile.ready_profile {
+  /* width: 60vw; */
+  width: 500px;
+  max-width: 500px;
+}
+
+@media (max-width: 600px) {
+  .expanded_profile.ready_profile {
+    width: 90vw;
+    /* width: 500px;
+    max-width: 500px; */
+    font-size: 3vw;
+  }
+  
+}
+
+.user_profile {
+  border: 1px solid gray;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: white;
+  padding: 6px;
+  border-radius: 8px;
+  height: 13%;
+}
+
+.user_profile button {
+  background-color: gray;
+  border: none;
+  color: white;
+  border-radius: 4px;
+  padding: 5px;
+  text-shadow: 1px 1px 1px #00000052;
+  cursor: pointer;
+}
+
+.profile-section {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  height: 100%;
+  text-shadow: 1px 1px 1px #00000052;
+}
+.profile-section h2 {
+  border: 1px solid rgb(56, 56, 56);
+  border-radius: 16px;
+  padding: 0 30px;
+  height: 10%;
+}
+
+.userData {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.userImage {
+  background-color: gray;
+  background-image: url("./assets/astronautaUser.png");
+  background-position: center;
+  background-size: 75%;
+  background-repeat: no-repeat;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  margin: 5%;
+  width: 100px;
+
+
+}
+
+.profile-data {
+
+  padding: 20px;
+  display: block;
+  color: white;
+  width: 100%;
+  margin-left: auto;
+  justify-content: space-evenly;
+}
+

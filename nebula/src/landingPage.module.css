@@ -1,0 +1,132 @@
+.container {
+  position: relative;
+}
+.spline_container {
+  position: relative;
+  width: 100% !important;
+  height: 77dvh !important;
+}
+.buttons_container{
+    display: flex;
+    flex-direction: column;
+    padding: 0 10px;
+    margin: 20px 0;
+}
+
+.landing_button{
+height: 3em;
+margin: 10px auto;
+border-radius: 8px;
+border: none;
+background: black;
+text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.432);
+
+}
+
+/* @media (max-width:40em) {
+    .landing_button{
+        width: 90vw;
+        height: 3em;
+        margin: 10px auto;
+        background-color: rgb(199, 199, 199);
+        border-radius: 8px;
+        border: none;
+        }
+        
+} */
+
+.start {
+  position: relative;
+  width: fit-content;
+  margin: 0 auto;
+  color: white;
+  background:none;
+}
+
+.start::after {
+  content: "";
+  height: 1.5px;
+  background: #ffffff;
+  width: 100%;
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  transform: translateX(-50%);
+  opacity: 0;
+  transition: transform 0.4s ease-in-out, opacity 0.4s linear;
+  box-shadow: 1px 1px 1px #00000052;
+
+}
+
+.start:hover::after {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.fade_out{
+  opacity: 0;
+  transition: opacity 0.5s ease-out;
+}
+
+.fade_in {
+  opacity: 1;
+  transition: opacity 0.5s ease-in;
+}
+
+.footer_copy {
+  color: rgb(255, 255, 255);
+  font-size: 10px;
+  padding-bottom: 5px;
+  width: fit-content;
+  display: flex;
+  font-weight: 500;
+  font-size: 11px;
+  margin: 20px auto;
+
+}
+
+
+
+/* --------------------------------------------------------------- */
+.login{
+display: flex;
+position: absolute;
+overflow: hidden;
+width: 90%;
+left: 5%;
+height: fit-content;
+bottom: 50.5px;
+max-width: 1980px;
+}
+
+#animatedDiv {
+  overflow: hidden;
+  pointer-events: none;
+  margin: 0 auto;
+  margin-top: auto;
+  width: 29.2em;
+  height: 2.5em;
+  border: 2px solid rgb(165, 165, 165);;
+  border-radius: 8px;
+  background-color: black;
+  
+}
+
+#animatedDiv.expanded {
+  display: block;
+  height: 82.5vh;
+  max-height: 600px;
+  transition: height 0.5s ease-out;
+}
+
+#animatedDiv.expanded.ready {
+  width: 85vw;
+  transition: width 0.5s ease-out;
+}
+
+.hidden {
+  z-index: -999;
+}
+
+
+

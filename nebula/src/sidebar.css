@@ -1,0 +1,194 @@
+.hamburger {
+  position: absolute;
+  left: 32px;
+  top: 16px;
+  display: flex;
+  height: 26px;
+  width: 24px;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+  user-select: none;
+  z-index: 5;
+}
+
+.hamburger__icon {
+  display: inline-block;
+  height: 5px;
+  width: 5px;
+  background: #fff;
+  border-radius: 4px;
+  box-shadow: 1px 1px 1px #00000052;
+  margin: 1px;
+}
+
+.sidebar {
+  cursor: pointer;
+  pointer-events: none;
+  height: 100vh;
+  width: 320px;
+  background: #000000af;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 0 60px;
+  display: flex;
+  flex-direction: column;
+  transform: translateX(-100%);
+  transition: transform 0.4s ease-in-out;
+  z-index: 4;
+  border-right: 1px solid gray;
+}
+
+.sidebar__close {
+  pointer-events: visible;
+  position: absolute;
+  top: 50%;
+  right: -30px;
+  background: #fff;
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  box-shadow: 0 0 20px 20px rgba(0, 0, 0, 0.151);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: translateX(-100%);
+  cursor: pointer;
+  transition: transform 0.4s ease-in-out 0.2s;
+  z-index: 9;
+}
+
+.sidebar__close::before,
+.sidebar__close::after {
+  content: "";
+  height: 2px;
+  background: #898989;
+  width: 24px;
+  display: block;
+  position: absolute;
+}
+
+.sidebar__close::after {
+  transform: rotate(90deg);
+}
+
+.sidebar__menu {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  justify-content: space-around;
+  font-size: 20px;
+  margin-top: 80px;
+  margin-bottom: 80px;
+  color: #898989;
+  z-index: 4;
+}
+
+.sidebar__menu button {
+  text-shadow: 1px 1px 1px #00000052;
+  position: relative;
+  display: flex;
+  background-color: transparent;
+  color: white;
+  border: none;
+  font-size: 21px;
+  cursor: pointer;
+  pointer-events: visible;
+}
+
+.sidebar__menu .underline::after {
+  content: "";
+  height: 2px;
+  background: #ffffff;
+  width: 100%;
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  transform: translateX(-50%);
+  opacity: 0;
+  transition: transform 0.4s ease-in-out, opacity 0.4s linear;
+  box-shadow: 1px 1px 1px #00000052;
+}
+
+.underline:hover::after {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.sidebar__menu a {
+  color: currentcolor;
+  text-decoration: none;
+  transform: translateX(-80%);
+  transition: transform 0.4s ease-in-out;
+}
+
+.sidebar__menu a::before {
+  content: "";
+  height: 2px;
+  background: #898989;
+  width: 125px;
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  transform: translateX(-50%);
+  opacity: 0;
+  border: 1px solid red;
+
+  transition: transform 0.4s ease-in-out, opacity 0.4s linear;
+}
+
+.sidebar__menu a:hover::before {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.menu-control {
+  display: none;
+}
+
+.menu-control:checked + .sidebar {
+  transform: translateX(0);
+}
+
+.menu-control:checked + .sidebar .sidebar__close {
+  transform: translateX(0) rotate(45deg);
+}
+
+.menu-control:checked + .sidebar .sidebar__menu a {
+  transform: translateX(0);
+}
+
+.sidebar-open {
+  transform: translateX(0);
+}
+
+.overlay-hidden{
+  transition: opacity 0.4s ease-in-out;
+
+  z-index: 1;
+  position: fixed;
+  overflow: auto;
+  width: 0vw;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.64);
+  opacity: 0;
+  display: none;
+}
+
+.overlay-visible{
+  z-index: 1;
+  position: fixed;
+  overflow: auto;
+  width: 200vw;
+  height: 100%;
+  left: 0;
+  cursor: 'not-allowed';
+  pointer-events: none !important;
+  background-color: rgba(0, 0, 0, 0.64);
+  transition: opacity 0.4s ease-in-out;
+
+  opacity: 1;
+
+}

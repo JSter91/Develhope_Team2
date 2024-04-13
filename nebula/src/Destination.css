@@ -1,0 +1,179 @@
+.destination-section {
+  position: relative;
+  width: fit-content;
+  height: 100vh;
+  max-height: 700px;
+  width: 100%;
+  max-width: 1920px;
+  margin: 0 auto;
+}
+
+.destination-container {
+  position: relative;
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+  width: 90%;
+  margin: auto;
+  margin-top: 70px;
+  max-width: 1920px;
+  height: 80vh;
+  max-height: 600px;
+  border-radius: 20px;
+}
+@media (max-width: 1100px) {
+  .destination-container {
+    height: 90vh;
+    width: 90%;
+  }
+}
+
+.inactive {
+  transition: background-color 0.5s ease-in-out;
+
+  background: transparent; /* Imposta lo sfondo trasparente quando l'elemento è inattivo */
+}
+
+@media (max-width: 1100px) {
+  .moon-background {
+    background: linear-gradient(
+      to top,
+      rgb(179, 179, 179),
+      rgba(255, 255, 255, 0)
+    );
+    
+  }
+
+  .mars-background {
+    background: linear-gradient(
+      to top,
+      rgba(219, 80, 61, 0.623),
+      rgba(255, 255, 255, 0)
+    );
+  }
+
+  .venus-background {
+    background: linear-gradient(
+      to top,
+      rgba(219, 137, 61, 0.836),
+      rgba(255, 255, 255, 0)
+    );
+  }
+
+  .mercury-background {
+    background: linear-gradient(
+      to top,
+      rgba(230, 133, 14, 0.798),
+      rgba(255, 255, 255, 0)
+    );
+  }
+  .jupiter-background {
+    background: linear-gradient(
+      to top,
+      rgba(117, 162, 168, 0.839),
+      rgba(255, 255, 255, 0)
+    );
+  }
+
+  .saturn-background {
+    background: linear-gradient(
+      to top,
+      rgba(147, 106, 56, 0.832),
+      rgba(255, 255, 255, 0)
+    );
+  }
+
+  .neptune-background {
+    background: linear-gradient(
+      to top,
+      rgba(47, 105, 153, 0.771),
+      rgba(255, 255, 255, 0)
+    );
+  }
+
+  .uranus-background {
+    background: linear-gradient(
+      to top,
+      rgba(147, 190, 225, 0.818),
+      rgba(255, 255, 255, 0)
+    );
+  }
+}
+
+/* ---------------------------------------------------------------- */
+@media (min-width: 1101px) {
+  .moon-background {
+    background: linear-gradient(
+      to right,
+      rgb(179, 179, 179),
+      rgba(255, 255, 255, 0)
+    );
+  }
+
+  .mars-background {
+    background: linear-gradient(
+      to right,
+      rgba(219, 80, 61, 0.623),
+      rgba(255, 255, 255, 0)
+    );
+  }
+
+  .venus-background {
+    background: linear-gradient(
+      to right,
+      rgba(219, 137, 61, 0.836),
+      rgba(255, 255, 255, 0)
+    );
+  }
+
+  .mercury-background {
+    background: linear-gradient(
+      to right,
+      rgba(230, 133, 14, 0.798),
+      rgba(255, 255, 255, 0)
+    );
+  }
+  .jupiter-background {
+    background: linear-gradient(
+      to right,
+      rgba(117, 162, 168, 0.839),
+      rgba(255, 255, 255, 0)
+    );
+  }
+
+  .saturn-background {
+    background: linear-gradient(
+      to right,
+      rgba(147, 106, 56, 0.832),
+      rgba(255, 255, 255, 0)
+    );
+  }
+
+  .neptune-background {
+    background: linear-gradient(
+      to right,
+      rgba(47, 105, 153, 0.771),
+      rgba(255, 255, 255, 0)
+    );
+  }
+
+  .uranus-background {
+    background: linear-gradient(
+      to right,
+      rgba(147, 190, 225, 0.818),
+      rgba(255, 255, 255, 0)
+    );
+  }
+}
+.destination-title {
+  color: white;
+  font-size: 20px;
+  width: 400px;
+  position: relative;
+  height: 10%;
+  text-shadow: 1px 1px 1px black;
+  /* margin-left: 7%; */
+  padding: 10px;
+  margin-top: 1%;
+}

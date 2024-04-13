@@ -1,0 +1,121 @@
+.michroma-regular {
+  font-family: "Michroma", sans-serif;
+  font-style: normal;
+}
+
+.Navbar {
+  font-family: "Michroma", sans-serif;
+  background: rgb(0, 0, 0);
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 1),
+    rgba(255, 255, 255, 0) 100%
+  );
+  position: fixed;
+  height: 70px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #ffffff;
+  z-index: 3;
+  padding: 0 20px;
+  align-items: center;
+  cursor: pointer;
+  max-width: 1920px;
+  z-index: 5;
+}
+
+.Navbar-div {
+  z-index: 5;
+  margin-left: 50px;
+}
+
+.Nebula-span {
+  font-weight: lighter;
+  font-size: 2.2em;
+  height: 50px;
+  text-shadow: 1px 1px 1px #00000052;
+  z-index: 7;
+  margin-top: -15px;
+}
+.Nav-ul-container {
+  display: none;
+}
+
+.Nav-ul-container-no-events {
+  display: none;
+  /* align-items: center;
+  justify-content: space-evenly;
+  width: 100%;
+  height: 50px;
+  margin-top: 0px;
+  z-index: 2;
+  cursor:not-allowed;
+  pointer-events: none; */
+}
+
+
+@media (min-width: 1000px) {
+  .Nav-ul-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+    height: 50px;
+    margin-top: 0px;
+    z-index: 2;
+  }
+
+  .Nav-ul-container-no-events {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+    height: 50px;
+    margin-top: 0px;
+    z-index: 2;
+    cursor:not-allowed;
+    pointer-events: none;
+  }
+
+  .li-container {
+    list-style: none;
+    font-size: 1em;
+    width: fit-content;
+    cursor: pointer;
+    text-shadow: 1px 1px 1px #00000052;
+    color: white;
+  }
+
+  .underline {
+    position: relative;
+    text-decoration: none;
+  }
+
+  .underline::after {
+    content: "";
+    height: 2px;
+    background: #ffffff;
+    width: 100%;
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: transform 0.4s ease-in-out, opacity 0.4s linear;
+    box-shadow: 1px 1px 1px #00000052;
+  }
+
+  .underline:hover::after {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  .visible.underline::after {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+
+
