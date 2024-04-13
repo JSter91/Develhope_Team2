@@ -1,23 +1,15 @@
-# Team Projects Showcase 🛠️
+# Electronic Arts Website Replica
 
-Welcome to the showcase of team projects completed during my course at DevelHope. Here are three projects that highlight our collaborative efforts and skills development:
+Welcome to the Electronic Arts Website Replica project! This project is a collaborative effort by our team at DevelHope to recreate the website of Electronic Arts (EA) using HTML, CSS, and JavaScript.
 
-## 1. Netflix Replica
+## Project Overview
 
-Our team worked on replicating the popular streaming platform Netflix using only HTML and CSS. Despite the simplicity of the tools, we aimed to capture the essence of the Netflix interface, focusing on layout, styling, and responsiveness.
+Our aim with this project was to emulate the design and functionality of the original Electronic Arts website. We paid close attention to detail and implemented interactive features to enhance the user experience.
 
-- Project Path: `netflix-replica`
+## Technologies Used
 
-## 2. Electronic Arts Website Replica
+- HTML
+- CSS
+- JavaScript
 
-In this project, our team recreated the website of Electronic Arts (EA) using HTML, CSS, and JavaScript. We paid close attention to detail, striving to emulate the design and functionality of the original site. Interactive features were implemented to enhance the user experience.
-
-- Project Path: `ea-website-replica`
-
-## 3. Nebula: Space Travel Website
-
-For our final project, we conceptualized and developed Nebula, a fictional website dedicated to space travel experiences. Leveraging React.js and Node.js, we created an immersive platform that offers information about space destinations, booking options, and interactive features for users interested in space exploration.
-
-- Project Path: `nebula-space-travel-website`
-
-Feel free to explore each project and provide feedback. Thank you for checking out our work!
+Feel free to explore the code and provide feedback. Thank you for checking out our work!
