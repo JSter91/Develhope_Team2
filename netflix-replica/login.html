@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="scriptLogin.js" defer></script>
+
+    <title>Netflix Login</title>
+    <link
+      rel="shortcut icon"
+      href="images-navbar/nficon2016.ico"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="login.css" />
+  </head>
+  <body>
+    <video id="video" style="display: none" controls>
+      <source
+        src="./images-hero-content/Netflix New Logo Animation 2019.mp4"
+        type="video/mp4"
+      />
+    </video>
+    <nav>
+      <a href="#"><img src="login_images/logo.svg" alt="logo" /></a>
+    </nav>
+    <div class="form-wrapper">
+      <h2>Accedi</h2>
+      <form action="./home.html" onsubmit="return submitForm()">
+        <div class="form-control">
+          <input type="email" required />
+          <label>Email o numero di telefono</label>
+        </div>
+        <div class="form-control">
+          <input type="password" required />
+          <label>Password</label>
+        </div>
+        <button type="submit">Accedi</button>
+        <div class="form-help">
+          <div class="remember-me">
+            <input type="checkbox" id="remember-me" />
+            <label for="remember-me">Ricordami</label>
+          </div>
+          <a href="#">Serve aiuto?</a>
+        </div>
+      </form>
+      <p>Prima volta su Netflix? <a href="#">Registrati</a></p>
+      <small>
+        L' accesso è protetto da Google reCAPTCHA per garantire che tu non sia
+        un bot.
+        <br />
+        <a href="#">Scopri di più.</a>
+      </small>
+    </div>
+  </body>
+</html>
