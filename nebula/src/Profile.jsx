@@ -1,8 +1,9 @@
-import React, { useEffect, useState } from "react";
+import { useEffect } from "react";
 import "./Profile.css";
 import { useContext } from "react";
 import { GlobalContext } from "./GlobalContext"; // Importa il context in cui sono conservati i dati
 
+// eslint-disable-next-line react/prop-types
 function Profile({ expanded, ready, setReady, setExpanded }) {
   const { userData, setUserData } = useContext(GlobalContext);
 
@@ -13,6 +14,7 @@ function Profile({ expanded, ready, setReady, setExpanded }) {
       // Effettua il parsing della stringa JSON recuperata dal localStorage
       const parsedUserData = JSON.parse(storedUserData);
       setUserData(parsedUserData);     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []); // Esegui solo al primo render del componente
   const back = () => {
     setReady(!ready);
@@ -30,7 +32,7 @@ function Profile({ expanded, ready, setReady, setExpanded }) {
     }
   
     // Effettua la richiesta di logout al server includendo il token
-    fetch("http://localhost:5000/api/logout", {
+    fetch("http://localhost:5000/api/users/logout", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

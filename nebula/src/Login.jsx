@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useContext, useState, useEffect } from "react";
 import login from "./login.module.css";
 import astronaut from "./assets/loginImg.png";
@@ -10,11 +11,11 @@ function Login() {
     setRegisterData,
     loginData,
     setLoginData,
-    userData,
+    // userData,
     setUserData,
-    formData,
-    setFormData,
-    isAuthenticated,
+    // formData,
+    // setFormData,
+    // isAuthenticated,
     setIsAuthenticated,
   } = useContext(GlobalContext);
 
@@ -102,7 +103,7 @@ function Login() {
     try {
       // Verifica se l'utente è già registrato
       const existingUserResponse = await fetch(
-        "http://localhost:5000/api/user?email=" + registerData.email
+        "http://localhost:5000/api/users?email=" + registerData.email
       );
       const existingUserData = await existingUserResponse.json();
       if (existingUserData.success) {
@@ -118,7 +119,7 @@ function Login() {
       }
 
       // Se l'utente non è già registrato, procedi con la registrazione
-      const response = await fetch("http://localhost:5000/api/register", {
+      const response = await fetch("http://localhost:5000/api/users/register", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -147,7 +148,7 @@ function Login() {
   const handleSubmitLogin = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch("http://localhost:5000/api/login", {
+      const response = await fetch("http://localhost:5000/api/users/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
