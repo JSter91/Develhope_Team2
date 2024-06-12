@@ -18,10 +18,10 @@ setupDb(); // Setup the database
 app.use('/api/bookings', bookingRoutes);
 app.use('/api/users', userRoutes);
 
-// app.use((err, req, res) => {
-//   console.error("Internal server error:", err);
-//   res.status(500).json({ message: "Internal server error" });
-// });
+app.use((err, req, res) => {
+  console.error("Internal server error:", err);
+  res.status(500).json({ message: "Internal server error" });
+});
 
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
