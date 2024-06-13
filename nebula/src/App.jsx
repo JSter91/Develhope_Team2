@@ -1,17 +1,14 @@
-import { Navigate, Route, Routes, useLocation } from "react-router-dom";
+import { Navigate, Route, Routes } from "react-router-dom";
+import { useContext, useEffect } from "react";
+import { GlobalContext } from "./GlobalContext";
+import { ClipLoader } from "react-spinners";
+
 import "./App.css";
-import Experience from "./Experience";
-import HeroContent from "./HeroContent";
-import { Navbar } from "./Navbar";
-import News from "./News";
-import SolarSystem from "./SolarSystem";
-import Star from "./Star";
+
 import Homepage from "./Homepage";
 import LandingPage from "./LandingPage";
-import { useContext, useEffect } from "react";
 import Book from "./Book";
 import Checkout from "./Checkout";
-import { GlobalContext } from "./GlobalContext";
 import NotFoundPage from "./NotFoundPage";
 
 function App() {
@@ -25,20 +22,21 @@ function App() {
     }
     setIsLoading(false);
 
-  }, []);
+  }, [setIsAuthenticated, setIsLoading]);
 
   if (isLoading) {
-    // Se l'applicazione è ancora in fase di caricamento, visualizza un messaggio di attesa
-    return <div>Loading...</div>;
+    return (
+      <div className="loading-container">
+        <ClipLoader className="loader" size={50} color="white" />
+        <div>Loading...</div>
+      </div>
+    );
   }
-  console.log("isAuthenticated:", isAuthenticated);
-
-
   return (
     <>
       <Routes>
       <Route path="*" element={<NotFoundPage />} />
-        <Route path="/" element={<LandingPage></LandingPage>}></Route>
+        <Route path="/" element={<LandingPage />}></Route>
         <Route
           path="/homepage"
           element={isAuthenticated ? <Homepage /> : <Navigate to="/" replace />}

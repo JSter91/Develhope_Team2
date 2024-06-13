@@ -1,15 +1,12 @@
-@import url('https://fonts.cdnfonts.com/css/michroma');
+@import url("https://fonts.cdnfonts.com/css/michroma");
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: "Michroma", sans-serif;
-
-
-
 }
-html{
+html {
   display: flex;
 }
 
@@ -25,3 +22,19 @@ body::-webkit-scrollbar {
   display: none;
 }
 
+.loading-container {
+  color:white;
+  width: 100%;
+  min-height: 400px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align:center;
+  align-items: center;
+}
+
+.loader {
+  color: white;
+  margin: 60px;
+}
