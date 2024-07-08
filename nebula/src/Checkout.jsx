@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useEffect, useState } from "react";
 import "./Checkout.css";
 import PaymentDetailsForm from "./PaymentDetailsForms";
 import BillingAddressForm from "./BillingAddressForm";
@@ -6,58 +6,67 @@ import OrderSummary from "./OrderSummary";
 import { useNavigate } from "react-router-dom";
 
 function Checkout() {
-  const [showBillingAddress, setShowBillingAddress] = useState(false);
-  const [showSummary, setShowSummary] = useState(false);
   const [progressStep, setProgressStep] = useState(1);
   const [billingData, setBillingData] = useState({
-    country: "",
-    city: "",
-    street: "",
-    zipcode: "",
+    billing: {
+      country: "",
+      city: "",
+      street: "",
+      zipcode: "",
+    },
+    card: {
+      firstName: "",
+      secondName: "",
+      cardNumber: "",
+      expiringDate: "",
+      cvc: "",
+    },
   });
 
   function handleFormChange(e) {
     const { name, value } = e.target;
+    const [section, key] = name.split(".");
     setBillingData((prevData) => ({
       ...prevData,
-      [name]: value,
+      [section]: {
+        ...prevData[section],
+        [key]: value,
+      },
     }));
+
     console.log(billingData);
   }
 
   const handleCompletePurchase = () => {
-    setShowBillingAddress(true);
-    setProgressStep(2);
+    setProgressStep(3);
   };
 
   const handleConfirmBillingAddress = () => {
-    setShowBillingAddress(false);
-    setShowSummary(true);
-    setProgressStep(3);
-    // console.log("Billing Data:", JSON.stringify(billingData));
+    setProgressStep(2);
   };
 
   const handleBack = () => {
-    if (progressStep > 1) {
-      setProgressStep(progressStep - 1);
-      if (progressStep === 2) {
-        setShowBillingAddress(false);
-      } else if (progressStep === 3) {
-        setShowSummary(false);
-      }
+    if (progressStep === 2 || progressStep === 3) {
+      setProgressStep((prev) => prev - 1);
     }
   };
 
-  const navigateHome = useNavigate()
-  function backHome(){
-    navigateHome("../homepage")
+  useEffect(() => {
+    console.log("updated", progressStep);
+  });
+
+  const navigateHome = useNavigate();
+  function backHome() {
+    navigateHome("../homepage");
   }
 
   return (
     <div className="checkoutContainer">
       <div className="headerContainer">
         <div className="menu-icons-container">
-          <button className="purchase-btn" onClick={backHome}>home</button>
+          <button className="purchase-btn" onClick={backHome}>
+            home
+          </button>
 
           <button className="purchase-btn" onClick={handleBack}>
             back
@@ -74,7 +83,13 @@ function Checkout() {
           <div
             className={`step-check ${progressStep >= 1 ? "completed" : ""}`}
           ></div>
-          <span className={`step-title ${progressStep === 1 ? "step-title active_check" : ""}`}>Payment</span>
+          <span
+            className={`step-title ${
+              progressStep === 1 ? "step-title active_check" : ""
+            }`}
+          >
+            Information
+          </span>
         </div>
         <div
           className={`progress-step-container ${
@@ -84,7 +99,13 @@ function Checkout() {
           <div
             className={`step-check ${progressStep >= 2 ? "completed" : ""}`}
           ></div>
-          <span className={`step-title ${progressStep === 2 ? "step-title active_check" : ""}`}>Information</span>
+          <span
+            className={`step-title ${
+              progressStep === 2 ? "step-title active_check" : ""
+            }`}
+          >
+            Payment
+          </span>
         </div>
         <div
           className={`progress-step-container ${
@@ -94,24 +115,34 @@ function Checkout() {
           <div
             className={`step-check ${progressStep >= 3 ? "completed" : ""}`}
           ></div>
-          <span className={`step-title ${progressStep === 3 ? "step-title active_check" : ""}`}>Review</span>
+          <span
+            className={`step-title ${
+              progressStep === 3 ? "step-title active_check" : ""
+            }`}
+          >
+            Review
+          </span>
         </div>
       </div>
 
       <div className="form-container">
-        {showBillingAddress && !showSummary && (
+        {progressStep === 1 && (
           <BillingAddressForm
             onConfirmBillingAddress={handleConfirmBillingAddress}
             handleFormChange={handleFormChange}
             billingData={billingData}
-            setBillingData={setBillingData}
           />
         )}
 
-        {showSummary && <OrderSummary billingData={billingData} />}
-
-        {!showBillingAddress && !showSummary && (
-          <PaymentDetailsForm onCompletePurchase={handleCompletePurchase} />
+        {progressStep === 2 && (
+          <PaymentDetailsForm
+            onCompletePurchase={handleCompletePurchase}
+            handleFormChange={handleFormChange}
+            billingData={billingData}
+          />
+        )}
+        {progressStep === 3 && (
+          <OrderSummary progressStep={progressStep} billingData={billingData} />
         )}
       </div>
     </div>

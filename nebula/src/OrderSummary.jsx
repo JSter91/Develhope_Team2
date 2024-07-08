@@ -1,7 +1,8 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-const OrderSummary = ({ billingData }) => {
+// eslint-disable-next-line react/prop-types
+const OrderSummary = ({ progressStep }) => {
   const returnAtHome = useNavigate();
 
   function returnToHome() {
@@ -59,7 +60,7 @@ const OrderSummary = ({ billingData }) => {
   };
   return (
     <>
-      {!purchased && (
+      {progressStep === 3 && (
         <div className="summary">
           <ul className="book-list-summary">
             {savedBookingsSummary.map((booking, index) => {

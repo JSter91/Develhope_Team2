@@ -1,46 +1,46 @@
-import React, { useState, useEffect } from "react";
+import { useState, useContext } from "react";
 import "./sidebar.css";
 import Profile from "./Profile";
-import { useContext } from "react";
 import { GlobalContext } from "./GlobalContext";
 import { useNavigate } from "react-router-dom";
 
 function Sidebar() {
-
-  const { scrollBlocked,setScrollBlocked} = useContext(GlobalContext)
-  // const { showProfile, setShowProfile } = useContext(SideContext);
+  const { scrollBlocked, setScrollBlocked } = useContext(GlobalContext);
   const [expanded, setExpanded] = useState(false);
   const [ready, setReady] = useState(false);
+  const [overlay, setOverlay] = useState(false);
 
-
-  // const [scrollBlocked, setScrollBlocked] = useState(false);
-  const [overlay, setOverlay] = useState(false)
   const toggleScroll = () => {
     setScrollBlocked(!scrollBlocked);
-    setOverlay(!overlay)
+    setOverlay(!overlay);
   };
   // Applica lo stile appropriato al body in base allo stato dello scroll
   if (scrollBlocked) {
-    document.body.style.overflow = 'hidden';
+    document.body.style.overflow = "hidden";
   } else {
-    document.body.style.overflow = '';
+    document.body.style.overflow = "";
   }
   /* ---------------------------------------------------- */
 
-  const toggleProfile = (e) => {
+  const toggleProfile = () => {
     setExpanded(() => !expanded);
     setTimeout(() => {
       setReady(!ready);
     }, 400);
   };
-const navigateBook = useNavigate()
-  function handleBookPage(){
-    navigateBook("../book")
+
+  const navigateBook = useNavigate();
+  function handleBookPage() {
+    navigateBook("../book");
   }
 
   return (
     <>
-      <label htmlFor="menu-control" className="hamburger" onClick={toggleScroll} >
+      <label
+        htmlFor="menu-control"
+        className="hamburger"
+        onClick={toggleScroll}
+      >
         <i className="hamburger__icon"></i>
         <i className="hamburger__icon"></i>
         <i className="hamburger__icon"></i>
@@ -49,8 +49,7 @@ const navigateBook = useNavigate()
       <input type="checkbox" id="menu-control" className="menu-control" />
 
       <aside className="sidebar">
-        <div className={overlay ? "overlay-visible" :"overlay-hidden"}>
-        </div>
+        <div className={overlay ? "overlay-visible" : "overlay-hidden"}></div>
 
         <nav className="sidebar__menu">
           <button onClick={toggleProfile}>
@@ -67,8 +66,11 @@ const navigateBook = useNavigate()
           </button>
         </nav>
 
-        <label htmlFor="menu-control" className="sidebar__close" onClick={toggleScroll} ></label>
-
+        <label
+          htmlFor="menu-control"
+          className="sidebar__close"
+          onClick={toggleScroll}
+        ></label>
       </aside>
       <Profile
         expanded={expanded}

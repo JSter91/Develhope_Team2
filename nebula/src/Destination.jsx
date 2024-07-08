@@ -1,9 +1,10 @@
-import React, { useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import Drop from "./Drop";
 import "./Destination.css";
 import Planets from "./Planets";
 import { GlobalContext } from "./GlobalContext";
 
+// eslint-disable-next-line react/prop-types
 function Destination({ id }) {
   const { selectedOption, setIsVisible1 } = useContext(GlobalContext);
   useEffect(() => {

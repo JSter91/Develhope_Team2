@@ -58,13 +58,14 @@
 
 } */
 
-/* .progress-step-container {
-    border: 1px solid green;
+.progress-step-container {
+    /* border: 1px solid green; */
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-} */
+    width: 33.3%;
+}
 
 .form-container {
   border: 1px solid grey;
@@ -258,3 +259,11 @@ flex-wrap: wrap;
   padding: 5px;
 }
 
+.custom-toast {
+  border: 2px solid blue;
+}
+
+.Toastify__toast--error .Toastify__toast-icon {
+  color: rgb(0, 255, 4); /* Colore personalizzato */
+  font-size: 24px; /* Dimensione personalizzata */
+}

@@ -1,9 +1,9 @@
-import React from "react";
 import "./solar-system.css";
 import "./App.css";
 import { GlobalContext } from "./GlobalContext";
-import { useState, useEffect, useContext } from "react";
+import { useEffect, useContext } from "react";
 
+// eslint-disable-next-line react/prop-types
 function SolarSystem({ id }) {
   const { setIsVisible3 } = useContext(GlobalContext);
 

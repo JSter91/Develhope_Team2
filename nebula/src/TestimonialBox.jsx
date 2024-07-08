@@ -1,6 +1,7 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import "./TestimonialBox.css"
 const TestimonialBox = () => {
+  // eslint-disable-next-line no-unused-vars
   const [testimonials, setTestimonials] = useState([
     {
         name: 'Miyah Myles',

@@ -1,17 +1,18 @@
 import "./explore.css";
-import canyon from "./assets/canyon.jpeg";
+// import canyon from "./assets/canyon.jpeg";
+// import quadsadv from "./assets/quadsadv.png";
+// import astromare from "./assets/astromare.jpg";
 import mars from "./assets/Mars.png";
-import astromare from "./assets/astromare.jpg";
 import nettuno from "./assets/Neptune.png";
 import venere from "./assets/Venus.png";
-import quadsadv from "./assets/quadsadv.png";
 import {GlobalContext} from "./GlobalContext";
-import { useState, useEffect, useContext } from "react";
+import { useEffect, useContext } from "react";
 import info from "./assets/icons8-info-100.png"
 
 
+// eslint-disable-next-line react/prop-types
 export function Explore({ id }) {
-  const { setIsVisible2, isVisible2 } = useContext(GlobalContext);
+  const { setIsVisible2 } = useContext(GlobalContext);
 
   useEffect(() => {
     const handleScroll = () => {

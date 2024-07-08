@@ -12,9 +12,11 @@ import {GlobalContext} from "./GlobalContext";
 
 // ////////////////////////////////////////////////////////////////
 // //////////////////////////////////////////////////////////////////
-import { useState, useEffect, useContext } from "react";
+import { useEffect, useContext } from "react";
+// eslint-disable-next-line react/prop-types
 function News({ id }) {
 
+  // eslint-disable-next-line no-unused-vars
   const { setIsVisible4, isVisible4 } = useContext(GlobalContext);
 
 

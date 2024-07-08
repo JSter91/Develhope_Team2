@@ -36,7 +36,7 @@ function App() {
     <>
       <Routes>
       <Route path="*" element={<NotFoundPage />} />
-        <Route path="/" element={<LandingPage />}></Route>
+        <Route path="/" element={isAuthenticated ? <Navigate to="/homepage" replace /> : <LandingPage />}></Route>
         <Route
           path="/homepage"
           element={isAuthenticated ? <Homepage /> : <Navigate to="/" replace />}

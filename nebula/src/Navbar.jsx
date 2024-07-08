@@ -1,6 +1,6 @@
 import "./navbar.css";
 import Sidebar from "./Sidebar";
-import SideContextProvider from "./SideContext";
+// import SideContextProvider from "./SideContext";
 import { GlobalContext } from "./GlobalContext";
 import { useContext } from "react";
 
@@ -69,9 +69,7 @@ export function Navbar() {
             </a>
           </li>
         </ul>
-        <SideContextProvider>
           <Sidebar></Sidebar>
-        </SideContextProvider>
       </nav>
     </>
   );

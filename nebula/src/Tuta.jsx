@@ -1,4 +1,3 @@
-
 import astro from "./assets/astro.png";
 import "./tuta.css";
 import { useState, useEffect, useRef } from "react";
